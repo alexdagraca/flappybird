@@ -35,8 +35,6 @@ void loop()
   if (GameOn == 1)
   {
     // Compteur
-    gb.display.setColor(YELLOW);
-    gb.display.setCursorX(5);
     gb.display.print(count);
 
     // Comptabilité
@@ -129,9 +127,11 @@ void loop()
     }
 
     // Les dessins
-    /*Contour COmpteur */
+    /*Contour Compteur */
     gb.display.setColor(WHITE);
-    gb.display.fillRect(0, 0, 1, 1);
+    gb.display.fillRect(31.8, 0, 2, 10);
+    gb.display.fillRect(41.75, 0, 2, 10);
+    gb.display.fillRect(33, 8, 10.5, 2);
 
     /*Balle*/
     gb.display.setColor(YELLOW);
