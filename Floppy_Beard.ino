@@ -44,10 +44,10 @@ void loop()
       Ybird = Ybird + SensY;
     }
 
-    if (Ybird + 5 == 66)
+    /*if (Ybird + 5 == 66)
     {
       Ybird = 25;
-    }
+    }*/
 
     // Déplacement couple Rectangle
 
@@ -57,53 +57,44 @@ void loop()
     XRect4 = XRect4 - SensX;
     XRect5 = XRect5 - SensX;
 
-    // Relancer le jeu si toucher (Rect1)
+    // Relancer le jeu si toucher
 
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, 15))
     {
       GameOn = 0;
     }
-
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuyup, 10, 20))
     {
       GameOn = 0;
     }
-
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuydown, 10, 15))
     {
       GameOn = 0;
     }
-
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuyup, 10, 20))
     {
       GameOn = 0;
     }
-
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuydown, 10, 15))
     {
       GameOn = 0;
     }
-
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuyup, 10, 20))
     {
       GameOn = 0;
     }
-
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuydown, 10, 15))
     {
       GameOn = 0;
     }
-
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuyup, 10, 20))
     {
       GameOn = 0;
     }
-
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuydown, 10, 15))
     {
       GameOn = 0;
     }
-
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuyup, 10, 20))
     {
       GameOn = 0;
@@ -136,6 +127,9 @@ void loop()
     gb.display.fillRect(XRect5, YTuyup, 10, 20);
     gb.display.fillRect(XRect5, YTuydown, 10, 15);
   }
+
+  // Fonction GameOver
+
   else
   {
     gb.display.print("Pressez A pour recommencer");
