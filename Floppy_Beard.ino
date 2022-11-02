@@ -96,7 +96,7 @@ void loop()
     if (gb.buttons.pressed(BUTTON_A))
     {
       GameOn = 1;
-      Ybird = 32;
+      /*Ybird = 32;*/
       XRect1 = 50;
       XRect2 = 95;
       XRect3 = 140;
