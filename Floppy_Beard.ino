@@ -4,7 +4,7 @@
 const int Tbird = 5;
 const int Xbird = 10;
 const int YTuyup = 0;
-const int YTuydown = 64;
+const int YTuydown = 49;
 // Les fonctions
 
 // Les variables
@@ -59,9 +59,8 @@ void loop()
 
     // Relancer le jeu si toucher (Rect1)
 
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, -15))
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, 15))
     {
-      gb.display.print("coucou");
       GameOn = 0;
     }
 
@@ -79,23 +78,23 @@ void loop()
     /*Couple rectangle 1*/
     gb.display.setColor(GREEN);
     gb.display.fillRect(XRect1, YTuyup, 10, 20);
-    gb.display.fillRect(XRect1, YTuydown, 10, -15);
+    gb.display.fillRect(XRect1, YTuydown, 10, 15);
 
     /*Couple rectangle 2*/
     gb.display.fillRect(XRect2, YTuyup, 10, 20);
-    gb.display.fillRect(XRect2, YTuydown, 10, -15);
+    gb.display.fillRect(XRect2, YTuydown, 10, 15);
 
     /*Couple rectangle 3*/
     gb.display.fillRect(XRect3, YTuyup, 10, 20);
-    gb.display.fillRect(XRect3, YTuydown, 10, -15);
+    gb.display.fillRect(XRect3, YTuydown, 10, 15);
 
     /*Couple rectangle 4*/
     gb.display.fillRect(XRect4, YTuyup, 10, 20);
-    gb.display.fillRect(XRect4, YTuydown, 10, -15);
+    gb.display.fillRect(XRect4, YTuydown, 10, 15);
 
     /*Couple rectangle 5*/
     gb.display.fillRect(XRect5, YTuyup, 10, 20);
-    gb.display.fillRect(XRect5, YTuydown, 10, -15);
+    gb.display.fillRect(XRect5, YTuydown, 10, 15);
   }
   else
   {
