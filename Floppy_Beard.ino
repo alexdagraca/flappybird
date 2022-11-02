@@ -63,7 +63,7 @@ void loop()
     {
       GameOn = 0;
     }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, -15))
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, 45))
     {
       GameOn = 0;
     }
@@ -77,7 +77,7 @@ void loop()
     /*Couple rectangle 1*/
     gb.display.setColor(GREEN);
     gb.display.fillRect(XRect1, YTuyup, 10, 20);
-    gb.display.fillRect(XRect1, YTuydown, 10, -15);
+    gb.display.fillRect(XRect1, YTuydown, 10, 45);
 
     /*Couple rectangle 2*/
     gb.display.fillRect(XRect2, YTuyup, 10, 20);
