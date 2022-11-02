@@ -2,6 +2,7 @@
 
 // Les constantes
 const int Tbird = 5;
+const int Xbird = 10;
 const int YTuyup = 0;
 const int YTuydown = 64;
 // Les fonctions
@@ -10,7 +11,6 @@ const int YTuydown = 64;
 
 /*Oiseau*/
 int Ybird = 32;
-int Xbird = 10;
 int SensY = 1;
 /*Rectangle*/
 int XRect1 = 50;
@@ -96,14 +96,13 @@ void loop()
     gb.display.print("Pressez A pour recommencer");
     if (gb.buttons.pressed(BUTTON_A))
     {
-      Xbird = Xbird;
-      /*Ybird = Ybird;*/
-      XRect1 = XRect1;
-      XRect2 = XRect2;
-      XRect3 = XRect3;
-      XRect4 = XRect4;
-      XRect5 = XRect5;
       GameOn = 1;
+      Ybird = 32;
+      XRect1 = 50;
+      XRect2 = 95;
+      XRect3 = 140;
+      XRect4 = 185;
+      XRect5 = 230;
     }
   }
 }
