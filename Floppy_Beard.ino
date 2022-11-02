@@ -59,20 +59,14 @@ void loop()
 
     // Relancer le jeu si toucher (Rect1)
 
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, -15))
-    {
+    (if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, -15)) if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuyup, 10, 20)) {
       GameOn = 0;
-    }
+    })
 
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuyup, 10, 20))
-    {
-      GameOn = 0;
-    }
+        // Les dessins
 
-    // Les dessins
-
-    /*Balle*/
-    gb.display.setColor(YELLOW);
+        /*Balle*/
+        gb.display.setColor(YELLOW);
     gb.display.fillRect(Xbird, Ybird, Tbird, Tbird);
 
     /*Couple rectangle 1*/
