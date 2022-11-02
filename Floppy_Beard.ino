@@ -35,9 +35,9 @@ void loop()
   // Les dessins
 
   gb.display.fillRect(Xbird, Ybird, Tbird, Tbird);
-}
 
-if (Ybird + 5 == 66)
-{
-  Ybird = Ybird;
+  if (Ybird + 5 == 66)
+  {
+    Ybird = Ybird;
+  }
 }
