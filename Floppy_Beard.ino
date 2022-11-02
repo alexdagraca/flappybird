@@ -69,6 +69,46 @@ void loop()
       GameOn = 0;
     }
 
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuydown, 10, 15))
+    {
+      GameOn = 0;
+    }
+
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuyup, 10, 20))
+    {
+      GameOn = 0;
+    }
+
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuydown, 10, 15))
+    {
+      GameOn = 0;
+    }
+
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuyup, 10, 20))
+    {
+      GameOn = 0;
+    }
+
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuydown, 10, 15))
+    {
+      GameOn = 0;
+    }
+
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuyup, 10, 20))
+    {
+      GameOn = 0;
+    }
+
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuydown, 10, 15))
+    {
+      GameOn = 0;
+    }
+
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuyup, 10, 20))
+    {
+      GameOn = 0;
+    }
+
     // Les dessins
 
     /*Balle*/
