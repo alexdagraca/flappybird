@@ -44,12 +44,11 @@ void loop()
       Ybird = Ybird + SensY;
     }
 
-    /*if (Ybird + 5 == 66)
+    if (Ybird + 5 == 66)
     {
-      Ybird = 25;
-    }*/
-
-    // Déplacement couple Rectangle
+      Ybird = ;
+    };
+    // Déplacement couple Rectangl
 
     XRect1 = XRect1 - SensX;
     XRect2 = XRect2 - SensX;
