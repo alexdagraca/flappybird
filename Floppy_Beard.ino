@@ -43,7 +43,7 @@ void loop()
 
   /*Balle*/
   gb.display.fillRect(Xbird, Ybird, Tbird, Tbird);
-  gb.display.color(YELLOW);
+  gb.display.setColor(YELLOW);
 
   /*Couple rectangle 1*/
   gb.display.fillRect(YTuyup, 10, 20);
