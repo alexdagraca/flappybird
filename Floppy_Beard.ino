@@ -98,6 +98,7 @@ void loop()
     {
       GameOn = 1;
       Xbird = Xbird;
+      /*Ybird = Ybird;*/
       XRect1 = XRect1;
       XRect2 = XRect2;
       XRect3 = XRect3;
