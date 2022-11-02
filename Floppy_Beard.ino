@@ -1,7 +1,6 @@
 #include <Gamebuino-Meta.h>
 
 // Les constantes
-const int Xbird = 10;
 const int Tbird = 5;
 const int YTuyup = 0;
 const int YTuydown = 64;
@@ -11,6 +10,7 @@ const int YTuydown = 64;
 
 /*Oiseau*/
 int Ybird = 32;
+int Xbird = 10;
 int SensY = 1;
 /*Rectangle*/
 int XRect1 = 50;
@@ -35,9 +35,7 @@ void loop()
   {
     // Déplacement du carré
 
-    Xbird
-
-        if (gb.buttons.pressed(BUTTON_UP))
+    if (gb.buttons.pressed(BUTTON_UP))
     {
       Ybird = Ybird - 15;
     }
@@ -99,6 +97,12 @@ void loop()
     if (gb.buttons.pressed(BUTTON_A))
     {
       GameOn = 1;
+      Xbird = Xbird;
+      XRect1 = XRect1;
+      XRect2 = XRect2;
+      XRect3 = XRect3;
+      XRect4 = XRect4;
+      XRect5 = XRect5;
     }
   }
 }
