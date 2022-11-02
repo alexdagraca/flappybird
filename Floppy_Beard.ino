@@ -46,6 +46,6 @@ void loop()
   gb.display.setColor(YELLOW);
 
   /*Couple rectangle 1*/
-  gb.display.fillRect(YTuyup, 10, 20);
-  gb.display.fillRect(YTuydown, 10, 35);
+  gb.display.fillRect(50, YTuyup, 10, 20);
+  gb.display.fillRect(50, YTuydown, 10, 35);
 }
