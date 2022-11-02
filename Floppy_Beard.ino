@@ -46,101 +46,107 @@ void loop()
 
     if (Ybird + 5 == 66)
     {
+
       Ybird = ;
     };
     // Déplacement couple Rectangl
-
-    XRect1 = XRect1 - SensX;
-    XRect2 = XRect2 - SensX;
-    XRect3 = XRect3 - SensX;
-    XRect4 = XRect4 - SensX;
-    XRect5 = XRect5 - SensX;
-
-    // Relancer le jeu si toucher
-
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, 15))
-    {
-      GameOn = 0;
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuyup, 10, 20))
-    {
-      GameOn = 0;
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuydown, 10, 15))
-    {
-      GameOn = 0;
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuyup, 10, 20))
-    {
-      GameOn = 0;
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuydown, 10, 15))
-    {
-      GameOn = 0;
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuyup, 10, 20))
-    {
-      GameOn = 0;
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuydown, 10, 15))
-    {
-      GameOn = 0;
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuyup, 10, 20))
-    {
-      GameOn = 0;
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuydown, 10, 15))
-    {
-      GameOn = 0;
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuyup, 10, 20))
-    {
-      GameOn = 0;
-    }
-
-    // Les dessins
-
-    /*Balle*/
-    gb.display.setColor(YELLOW);
-    gb.display.fillRect(Xbird, Ybird, Tbird, Tbird);
-
-    /*Couple rectangle 1*/
-    gb.display.setColor(GREEN);
-    gb.display.fillRect(XRect1, YTuyup, 10, 20);
-    gb.display.fillRect(XRect1, YTuydown, 10, 15);
-
-    /*Couple rectangle 2*/
-    gb.display.fillRect(XRect2, YTuyup, 10, 20);
-    gb.display.fillRect(XRect2, YTuydown, 10, 15);
-
-    /*Couple rectangle 3*/
-    gb.display.fillRect(XRect3, YTuyup, 10, 20);
-    gb.display.fillRect(XRect3, YTuydown, 10, 15);
-
-    /*Couple rectangle 4*/
-    gb.display.fillRect(XRect4, YTuyup, 10, 20);
-    gb.display.fillRect(XRect4, YTuydown, 10, 15);
-
-    /*Couple rectangle 5*/
-    gb.display.fillRect(XRect5, YTuyup, 10, 20);
-    gb.display.fillRect(XRect5, YTuydown, 10, 15);
+    == == == =
+                 SensY = 0;
   }
 
-  // Fonction GameOver
+  // Déplacement couple Rectangle
 
-  else
+  XRect1 = XRect1 - SensX;
+  XRect2 = XRect2 - SensX;
+  XRect3 = XRect3 - SensX;
+  XRect4 = XRect4 - SensX;
+  XRect5 = XRect5 - SensX;
+
+  // Relancer le jeu si toucher
+
+  if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, 15))
   {
-    gb.display.print("Pressez A pour recommencer");
-    if (gb.buttons.pressed(BUTTON_A))
-    {
-      GameOn = 1;
-      Ybird = 32;
-      XRect1 = 50;
-      XRect2 = 95;
-      XRect3 = 140;
-      XRect4 = 185;
-      XRect5 = 230;
-    }
+    GameOn = 0;
   }
+  if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuyup, 10, 20))
+  {
+    GameOn = 0;
+  }
+  if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuydown, 10, 15))
+  {
+    GameOn = 0;
+  }
+  if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuyup, 10, 20))
+  {
+    GameOn = 0;
+  }
+  if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuydown, 10, 15))
+  {
+    GameOn = 0;
+  }
+  if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuyup, 10, 20))
+  {
+    GameOn = 0;
+  }
+  if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuydown, 10, 15))
+  {
+    GameOn = 0;
+  }
+  if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuyup, 10, 20))
+  {
+    GameOn = 0;
+  }
+  if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuydown, 10, 15))
+  {
+    GameOn = 0;
+  }
+  if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuyup, 10, 20))
+  {
+    GameOn = 0;
+  }
+
+  // Les dessins
+
+  /*Balle*/
+  gb.display.setColor(YELLOW);
+  gb.display.fillRect(Xbird, Ybird, Tbird, Tbird);
+
+  /*Couple rectangle 1*/
+  gb.display.setColor(GREEN);
+  gb.display.fillRect(XRect1, YTuyup, 10, 20);
+  gb.display.fillRect(XRect1, YTuydown, 10, 15);
+
+  /*Couple rectangle 2*/
+  gb.display.fillRect(XRect2, YTuyup, 10, 20);
+  gb.display.fillRect(XRect2, YTuydown, 10, 15);
+
+  /*Couple rectangle 3*/
+  gb.display.fillRect(XRect3, YTuyup, 10, 20);
+  gb.display.fillRect(XRect3, YTuydown, 10, 15);
+
+  /*Couple rectangle 4*/
+  gb.display.fillRect(XRect4, YTuyup, 10, 20);
+  gb.display.fillRect(XRect4, YTuydown, 10, 15);
+
+  /*Couple rectangle 5*/
+  gb.display.fillRect(XRect5, YTuyup, 10, 20);
+  gb.display.fillRect(XRect5, YTuydown, 10, 15);
+}
+
+// Fonction GameOver
+
+else
+{
+  gb.display.print("Pressez A pour recommencer");
+  if (gb.buttons.pressed(BUTTON_A))
+  {
+    GameOn = 1;
+    Ybird = 32;
+    XRect1 = 50;
+    XRect2 = 95;
+    XRect3 = 140;
+    XRect4 = 185;
+    XRect5 = 230;
+  }
+}
 }
