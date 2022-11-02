@@ -57,12 +57,13 @@ void loop()
     XRect4 = XRect4 - SensX;
     XRect5 = XRect5 - SensX;
 
-    // Relancer le jeu si toucher
+    // Relancer le jeu si toucher (Rect1)
 
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuyup, 10, 20))
-    {
-      GameOn = 0;
-    }
+      else(gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, -15))
+      {
+        GameOn = 0;
+      }
 
     // Les dessins
 
