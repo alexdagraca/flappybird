@@ -23,14 +23,13 @@ void loop()
 
   // Déplacement du carré
 
-  if (gb.buttons.released(BUTTON_UP))
-  {
-    Ybird = Ybird + SensY;
-  }
-
-  else if (gb.buttons.pressed(BUTTON_UP))
+  if (gb.buttons.pressed(BUTTON_UP))
   {
     Ybird = Ybird - 2;
+  }
+  else
+  {
+    Ybird = Ybird + SensY;
   }
 
   // Les dessins
