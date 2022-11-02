@@ -25,7 +25,7 @@ void loop()
 
   if (gb.buttons.pressed(BUTTON_UP))
   {
-    Ybird = Ybird - 2;
+    Ybird = Ybird - 5;
   }
   else
   {
@@ -35,4 +35,9 @@ void loop()
   // Les dessins
 
   gb.display.fillRect(Xbird, Ybird, Tbird, Tbird);
+}
+
+if (Ybird + 5 == 66)
+{
+  Ybird = Ybird;
 }
