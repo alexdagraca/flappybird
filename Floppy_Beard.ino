@@ -97,6 +97,7 @@ void loop()
     if (gb.buttons.pressed(BUTTON_A))
     {
       GameOn = 1;
+      Xbird = 10;
     }
   }
 }
