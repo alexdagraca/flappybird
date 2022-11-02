@@ -25,7 +25,7 @@ void loop()
 
   if (gb.buttons.pressed(BUTTON_UP))
   {
-    Ybird = Ybird - 5;
+    Ybird = Ybird - 15;
   }
   else
   {
