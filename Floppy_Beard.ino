@@ -3,7 +3,6 @@
 // Les constantes
 const int Xbird = 10;
 const int Tbird = 5;
-
 // Les fonctions
 
 // Les variables
@@ -25,6 +24,10 @@ void loop()
   // Déplacement du carré
 
   Ybird = Ybird + SensY;
+  if (gb.button.pressed(BUTTON_UP))
+  {
+    Ybird = -2;
+  }
 
   // Les dessins
 
