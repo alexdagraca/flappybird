@@ -42,6 +42,7 @@ void loop()
     if (XRect1 == 10)
     {
       count = count + 1;
+      gb.sound.tone(220, 1000);
     }
     if (XRect2 == 10)
     {
@@ -127,11 +128,11 @@ void loop()
     }
 
     // Les dessins
-    /*Contour Compteur */
+    /*Contour Compteur
     gb.display.setColor(WHITE);
     gb.display.fillRect(31.8, 0, 2, 10);
     gb.display.fillRect(41.75, 0, 2, 10);
-    gb.display.fillRect(33, 8, 10.5, 2);
+    gb.display.fillRect(33, 8, 10.5, 2);*/
 
     /*Balle*/
     gb.display.setColor(YELLOW);
