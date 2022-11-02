@@ -3,6 +3,8 @@
 // Les constantes
 const int Xbird = 10;
 const int Tbird = 5;
+const int YTuyup = 0;
+const int YTuydown = 64;
 // Les fonctions
 
 // Les variables
@@ -32,12 +34,18 @@ void loop()
     Ybird = Ybird + SensY;
   }
 
-  // Les dessins
-
-  gb.display.fillRect(Xbird, Ybird, Tbird, Tbird);
-
   if (Ybird + 5 == 66)
   {
-    Ybird = Ybird;
+    Ybird = 32;
   }
+
+  // Les dessins
+
+  /*Balle*/
+  gb.display.fillRect(Xbird, Ybird, Tbird, Tbird);
+  gb.display.color(YELLOW);
+
+  /*Couple rectangle 1*/
+  gb.display.fillRect(YTuyup, 10, 20);
+  gb.display.fillRect(YTuydown, 10, 35);
 }
