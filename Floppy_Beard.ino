@@ -60,7 +60,12 @@ void loop()
     // Relancer le jeu si toucher (Rect1)
 
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuyup, 10, 20))
-      else(gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, -15))
+    {
+      GameOn = 1;
+    }
+
+    else
+      (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, -15))
       {
         GameOn = 0;
       }
