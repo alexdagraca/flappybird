@@ -36,16 +36,17 @@ void loop()
 
   if (Ybird + 5 == 66)
   {
-    Ybird = 32;
+    Ybird = 25;
   }
 
   // Les dessins
 
   /*Balle*/
-  gb.display.fillRect(Xbird, Ybird, Tbird, Tbird);
   gb.display.setColor(YELLOW);
+  gb.display.fillRect(Xbird, Ybird, Tbird, Tbird);
 
   /*Couple rectangle 1*/
+  gb.display.setColor(GREEN);
   gb.display.fillRect(50, YTuyup, 10, 20);
-  gb.display.fillRect(50, YTuydown, 10, 35);
+  gb.display.fillRect(50, YTuydown, 10, -35);
 }
