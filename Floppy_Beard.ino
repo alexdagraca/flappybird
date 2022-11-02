@@ -46,7 +46,7 @@ void loop()
 
     if (Ybird + 5 == 66)
     {
-      SensY = SensY - 0;
+      SensY = 0;
     }
 
     // Déplacement couple Rectangle
