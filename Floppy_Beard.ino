@@ -11,6 +11,8 @@ const int YTuydown = 64;
 
 int Ybird = 32;
 int SensY = 1;
+int XRect1 = 50;
+int SensX = -1;
 
 void setup()
 {
@@ -39,6 +41,9 @@ void loop()
     Ybird = 25;
   }
 
+  // Déplacement couple Rectangle 1
+  XRect1 = XRect1 - SensX;
+
   // Les dessins
 
   /*Balle*/
@@ -47,6 +52,6 @@ void loop()
 
   /*Couple rectangle 1*/
   gb.display.setColor(GREEN);
-  gb.display.fillRect(50, YTuyup, 10, 20);
-  gb.display.fillRect(50, YTuydown, 10, -35);
+  gb.display.fillRect(XRect1, YTuyup, 10, 20);
+  gb.display.fillRect(XRect1, YTuydown, 10, -15);
 }
