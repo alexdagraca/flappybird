@@ -14,10 +14,10 @@ int Ybird = 32;
 int SensY = 1;
 /*Rectangle*/
 int XRect1 = 50;
-int XRect2 = 65;
-int XRect3 = 90;
-int XRect4 = 105;
-int XRect5 = 115;
+int XRect2 = 95;
+int XRect3 = 140;
+int XRect4 = 185;
+int XRect5 = 230;
 int SensX = 1;
 
 void setup()
