@@ -20,6 +20,7 @@ int XRect4 = 185;
 int XRect5 = 230;
 int SensX = 1;
 int GameOn = 1;
+int count = 0;
 
 void setup()
 {
@@ -33,6 +34,34 @@ void loop()
   gb.display.clear();
   if (GameOn == 1)
   {
+    // Compteur
+    gb.display.setColor(YELLOW);
+    gb.display.setCursorX(5);
+    gb.display.print(count);
+
+    // Comptabilité
+
+    if (XRect1 == 10)
+    {
+      count = count + 1;
+    }
+    if (XRect2 == 10)
+    {
+      count = count + 1;
+    }
+    if (XRect3 == 10)
+    {
+      count = count + 1;
+    }
+    if (XRect4 == 10)
+    {
+      count = count + 1;
+    }
+    if (XRect5 == 10)
+    {
+      count = count + 1;
+    }
+
     // Déplacement du carré
 
     if (gb.buttons.pressed(BUTTON_UP))
@@ -100,6 +129,9 @@ void loop()
     }
 
     // Les dessins
+    /*Contour COmpteur */
+    gb.display.setColor(WHITE);
+    gb.display.fillRect(0, 0, 1, 1);
 
     /*Balle*/
     gb.display.setColor(YELLOW);
@@ -135,6 +167,7 @@ void loop()
     if (gb.buttons.pressed(BUTTON_A))
     {
       GameOn = 1;
+      count = 0;
       Ybird = 32;
       XRect1 = 50;
       XRect2 = 95;
