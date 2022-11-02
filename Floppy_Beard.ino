@@ -35,9 +35,9 @@ void loop()
   {
     // Déplacement du carré
 
-    Xbird = 10;
+    Xbird
 
-    if (gb.buttons.pressed(BUTTON_UP))
+        if (gb.buttons.pressed(BUTTON_UP))
     {
       Ybird = Ybird - 15;
     }
