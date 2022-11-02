@@ -96,7 +96,6 @@ void loop()
     gb.display.print("Pressez A pour recommencer");
     if (gb.buttons.pressed(BUTTON_A))
     {
-      GameOn = 1;
       Xbird = Xbird;
       /*Ybird = Ybird;*/
       XRect1 = XRect1;
@@ -104,6 +103,7 @@ void loop()
       XRect3 = XRect3;
       XRect4 = XRect4;
       XRect5 = XRect5;
+      GameOn = 1;
     }
   }
 }
