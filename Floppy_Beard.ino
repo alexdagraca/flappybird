@@ -45,8 +45,13 @@ void loop()
     Ybird = 25;
   }
 
-  // Déplacement couple Rectangle 1
+  // Déplacement couple Rectangle
+
   XRect1 = XRect1 - SensX;
+  XRect2 = XRect2 - SensX;
+  XRect3 = XRect3 - SensX;
+  XRect4 = XRect4 - SensX;
+  XRect5 = XRect5 - SensX;
 
   // Les dessins
 
@@ -78,5 +83,4 @@ void loop()
   gb.display.setColor(GREEN);
   gb.display.fillRect(XRect5, YTuyup, 10, 20);
   gb.display.fillRect(XRect5, YTuydown, 10, -15);
-
 }
