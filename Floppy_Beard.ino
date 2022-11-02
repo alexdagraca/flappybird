@@ -61,14 +61,12 @@ void loop()
 
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuyup, 10, 20))
     {
-      GameOn = 1;
+      GameOn = 0;
     }
-
-    else
-      (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, -15))
-      {
-        GameOn = 0;
-      }
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, -15))
+    {
+      GameOn = 0;
+    }
 
     // Les dessins
 
