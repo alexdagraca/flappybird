@@ -5,13 +5,13 @@ const int Tbird = 5;
 const int Xbird = 10;
 const int YTuyup = 0;
 const int YTuydown = 49;
-// Les fonctions
 
 // Les variables
 
 /*Oiseau*/
 int Ybird = 32;
 int SensY = 1;
+
 /*Rectangle*/
 int XRect1 = 50;
 int XRect2 = 95;
@@ -28,21 +28,22 @@ void setup()
 }
 
 void loop()
+
 {
   while (!gb.update())
     ;
   gb.display.clear();
   if (GameOn == 1)
   {
-    // Compteur
-    gb.display.print(count);
+
+    // Les fonctions
 
     // Comptabilité
 
     if (XRect1 == 10)
     {
       count = count + 1;
-      gb.sound.tone(220, 1000);
+      gb.sound.tone(200, 500);
     }
     if (XRect2 == 10)
     {
@@ -89,42 +90,52 @@ void loop()
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown, 10, 15))
     {
       GameOn = 0;
+      gb.sound.tone(100, 500);
     }
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuyup, 10, 20))
     {
       GameOn = 0;
+      gb.sound.tone(100, 500);
     }
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuydown, 10, 15))
     {
       GameOn = 0;
+      gb.sound.tone(100, 500);
     }
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuyup, 10, 20))
     {
       GameOn = 0;
+      gb.sound.tone(100, 500);
     }
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuydown, 10, 15))
     {
       GameOn = 0;
+      gb.sound.tone(100, 500);
     }
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuyup, 10, 20))
     {
       GameOn = 0;
+      gb.sound.tone(100, 500);
     }
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuydown, 10, 15))
     {
       GameOn = 0;
+      gb.sound.tone(100, 500);
     }
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuyup, 10, 20))
     {
       GameOn = 0;
+      gb.sound.tone(100, 500);
     }
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuydown, 10, 15))
     {
       GameOn = 0;
+      gb.sound.tone(100, 500);
     }
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuyup, 10, 20))
     {
       GameOn = 0;
+      gb.sound.tone(100, 500);
     }
 
     // Les dessins
@@ -158,13 +169,17 @@ void loop()
     /*Couple rectangle 5*/
     gb.display.fillRect(XRect5, YTuyup, 10, 20);
     gb.display.fillRect(XRect5, YTuydown, 10, 15);
+
+    /*Compteur*/
+    gb.display.setColor(WHITE);
+    gb.display.print(count);
   }
 
   // Fonction GameOver
 
   else
   {
-    gb.display.print("Pressez A pour recommencer");
+    gb.display.println("Pressez A pour recommencer");
     if (gb.buttons.pressed(BUTTON_A))
     {
       GameOn = 1;
