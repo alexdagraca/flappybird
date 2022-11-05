@@ -5,6 +5,7 @@ const int Tbird = 5;
 const int Xbird = 10;
 const int YTuyup = 0;
 const int YTuydown = 49;
+const int DistRectX = 45;
 
 // Les variables
 
@@ -28,7 +29,6 @@ void setup()
 }
 
 void loop()
-
 {
   while (!gb.update())
     ;
@@ -64,9 +64,9 @@ void loop()
 
     // Déplacement du carré
 
-    if (gb.buttons.pressed(BUTTON_UP))
+    if (gb.buttons.repeat(BUTTON_UP))
     {
-      Ybird = Ybird - 15;
+      Ybird = Ybird - 2;
     }
     else
     {
