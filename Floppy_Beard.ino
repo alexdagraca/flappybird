@@ -133,13 +133,16 @@ void loop()
 
     /*Compteur*/
     gb.display.setColor(WHITE);
-    gb.display.print(DistRectX);
+    gb.display.print(countPoints);
   }
 
   // Fonction GameOver
 
   else
   {
+    gb.display.print("Votre score est de :");
+    gb.display.println(countPoints);
+    gb.display.println("");
     gb.display.println("Pressez A pour recommencer");
     if (gb.buttons.pressed(BUTTON_A))
     {
