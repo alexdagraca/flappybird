@@ -3,7 +3,7 @@
 // Les constantes
 const int Tbird = 5;
 const int Xbird = 10;
-const int YTuyup = 0;
+const int YTuyauUp = 0;
 
 // Les variables
 
@@ -12,15 +12,15 @@ int Ybird = 32;
 int SensY = 1;
 
 /*Rectangle*/
-int DistRectX = 40;
-int XRect1 = DistRectX;
-int XRect2 = DistRectX * 2;
+int DistEntreTuyaux = 40;
+int XTuyau1 = DistEntreTuyaux;
+int XTuyau2 = DistEntreTuyaux * 2;
 int heightUp1 = random(5, 33);
 int heightUp2 = random(5, 33);
-int YTuydown1 = random((heightUp1 + 28), 58);
-int YTuydown2 = random((heightUp2 + 28), 58);
-int heightDown1 = gb.display.height() - YTuydown1;
-int heightDown2 = gb.display.height() - YTuydown2;
+int YTuyaudown1 = random((heightUp1 + 28), 58);
+int YTuyaudown2 = random((heightUp2 + 28), 58);
+int heightDown1 = gb.display.height() - YTuyaudown1;
+int heightDown2 = gb.display.height() - YTuyaudown2;
 
 int SensX = 1;
 int GameOn = 1;
@@ -45,7 +45,7 @@ void loop()
 
     // Comptabilité
 
-    if (XRect1 == Xbird || XRect2 == Xbird)
+    if (XTuyau1 == Xbird || XTuyau2 == Xbird)
     {
       countPoints++;
       gb.sound.tone(200, 500);
@@ -68,51 +68,51 @@ void loop()
     };
     // Déplacement couple Rectangle
 
-    XRect1 -= SensX;
+    XTuyau1 -= SensX;
 
-    XRect2 = XRect2 - SensX;
+    XTuyau2 = XTuyau2 - SensX;
 
     countX += SensX;
 
-    // Quand le premier tuyau sort de lecran on le rajoute à l'arriere apres le 2eme tuyau a une distance de DistRectX
-    // Reinitialisation des distances entre 2 rectangles et les hauteurs des rectangles via random
-    if ((XRect1 + 10) <= 0)
+    // Quand le premier tuyau sort de l'écran on le rajoute à l'arrière après le 2ème tuyau à une distance de DistEntreTuyaux
+    // Réinitialisation des distances entre 2 couples de tuyaux et les hauteurs des tuyaux via le random
+    if ((XTuyau1 + 10) <= 0)
     {
-      DistRectX = random(35, gb.display.width() - 10);
+      DistEntreTuyaux = random(35, gb.display.width() - 10);
       heightUp1 = random(5, 31);
-      YTuydown1 = heightUp1 + 28;
-      heightDown1 = gb.display.height() - YTuydown1;
-      XRect1 = XRect2 + DistRectX;
+      YTuyaudown1 = heightUp1 + 28;
+      heightDown1 = gb.display.height() - YTuyaudown1;
+      XTuyau1 = XTuyau2 + DistEntreTuyaux;
     }
 
-    // Quand le deuxieme tuyau sort de lecran on le rajoute à l'arriere apres le 1er tuyau a une distance de DistRectX
-    if ((XRect2 + 10) <= 0)
+    // Quand le deuxième tuyau sort de l'écran on le rajoute à l'arrière après le 1er tuyau à une distance de DistEntreTuyaux
+    if ((XTuyau2 + 10) <= 0)
     {
-      DistRectX = random(35, gb.display.width() - 10);
+      DistEntreTuyaux = random(35, gb.display.width() - 10);
       heightUp2 = random(5, 31);
-      YTuydown2 = heightUp2 + 28;
-      heightDown2 = gb.display.height() - YTuydown2;
-      XRect2 = XRect1 + DistRectX;
+      YTuyaudown2 = heightUp2 + 28;
+      heightDown2 = gb.display.height() - YTuyaudown2;
+      XTuyau2 = XTuyau1 + DistEntreTuyaux;
     }
 
     // Relancer le jeu si toucher
 
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuydown1, 10, heightDown1))
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XTuyau1, YTuyaudown1, 10, heightDown1))
     {
       GameOn = 0;
       gb.sound.tone(100, 500);
     }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect1, YTuyup, 10, heightUp1))
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XTuyau1, YTuyauUp, 10, heightUp1))
     {
       GameOn = 0;
       gb.sound.tone(100, 500);
     }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuydown2, 10, heightDown2))
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XTuyau2, YTuyaudown2, 10, heightDown2))
     {
       GameOn = 0;
       gb.sound.tone(100, 500);
     }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuyup, 10, heightUp2))
+    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XTuyau2, YTuyauUp, 10, heightUp2))
     {
       GameOn = 0;
       gb.sound.tone(100, 500);
@@ -124,12 +124,12 @@ void loop()
 
     /*Couple rectangle 1*/
     gb.display.setColor(GREEN);
-    gb.display.fillRect(XRect1, YTuyup, 10, heightUp1);
-    gb.display.fillRect(XRect1, YTuydown1, 10, heightDown1);
+    gb.display.fillRect(XTuyau1, YTuyauUp, 10, heightUp1);
+    gb.display.fillRect(XTuyau1, YTuyaudown1, 10, heightDown1);
 
     /*Couple rectangle 2*/
-    gb.display.fillRect(XRect2, YTuyup, 10, heightUp2);
-    gb.display.fillRect(XRect2, YTuydown2, 10, heightDown2);
+    gb.display.fillRect(XTuyau2, YTuyauUp, 10, heightUp2);
+    gb.display.fillRect(XTuyau2, YTuyaudown2, 10, heightDown2);
 
     /*Compteur*/
     gb.display.setColor(WHITE);
@@ -149,8 +149,8 @@ void loop()
       GameOn = 1;
       countPoints = 0;
       Ybird = 32;
-      XRect1 = DistRectX;
-      XRect2 = DistRectX * 2;
+      XTuyau1 = DistEntreTuyaux;
+      XTuyau2 = DistEntreTuyaux * 2;
     }
   }
 }
