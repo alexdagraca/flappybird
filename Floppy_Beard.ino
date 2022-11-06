@@ -14,14 +14,12 @@ int Ybird = 32;
 int SensY = 1;
 
 /*Rectangle*/
-int XRect1 = 50;
-int XRect2 = 95;
-int XRect3 = 140;
-int XRect4 = 185;
-int XRect5 = 230;
+int XRect1 = DistRectX;
+int XRect2 = DistRectX * 2;
 int SensX = 1;
 int GameOn = 1;
-int count = 0;
+int countPoints = 0;
+int countX = 0;
 
 void setup()
 {
@@ -32,6 +30,7 @@ void loop()
 {
   while (!gb.update())
     ;
+
   gb.display.clear();
   if (GameOn == 1)
   {
@@ -40,31 +39,15 @@ void loop()
 
     // Comptabilité
 
-    if (XRect1 == 10)
+    if (XRect1 == Xbird || XRect2 == Xbird)
     {
-      count = count + 1;
+      countPoints++;
       gb.sound.tone(200, 500);
-    }
-    if (XRect2 == 10)
-    {
-      count = count + 1;
-    }
-    if (XRect3 == 10)
-    {
-      count = count + 1;
-    }
-    if (XRect4 == 10)
-    {
-      count = count + 1;
-    }
-    if (XRect5 == 10)
-    {
-      count = count + 1;
     }
 
     // Déplacement du carré
 
-    if (gb.buttons.repeat(BUTTON_UP))
+    if (gb.buttons.repeat(BUTTON_UP, 0))
     {
       Ybird = Ybird - 2;
     }
@@ -79,11 +62,23 @@ void loop()
     };
     // Déplacement couple Rectangle
 
-    XRect1 = XRect1 - SensX;
+    XRect1 -= SensX;
+
     XRect2 = XRect2 - SensX;
-    XRect3 = XRect3 - SensX;
-    XRect4 = XRect4 - SensX;
-    XRect5 = XRect5 - SensX;
+
+    countX += SensX;
+
+    // Quand le premier tuyau sort de lecran on le rajoute à l'arriere apres le 2eme tuyau a une distance de DistRectX
+    if ((XRect1 + 10) <= 0)
+    {
+      XRect1 = XRect2 + DistRectX;
+    }
+
+    // Quand le deuxieme tuyau sort de lecran on le rajoute à l'arriere apres le 1er tuyau a une distance de DistRectX
+    if ((XRect2 + 10) <= 0)
+    {
+      XRect2 = XRect1 + DistRectX;
+    }
 
     // Relancer le jeu si toucher
 
@@ -103,36 +98,6 @@ void loop()
       gb.sound.tone(100, 500);
     }
     if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect2, YTuyup, 10, 20))
-    {
-      GameOn = 0;
-      gb.sound.tone(100, 500);
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuydown, 10, 15))
-    {
-      GameOn = 0;
-      gb.sound.tone(100, 500);
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect3, YTuyup, 10, 20))
-    {
-      GameOn = 0;
-      gb.sound.tone(100, 500);
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuydown, 10, 15))
-    {
-      GameOn = 0;
-      gb.sound.tone(100, 500);
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect4, YTuyup, 10, 20))
-    {
-      GameOn = 0;
-      gb.sound.tone(100, 500);
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuydown, 10, 15))
-    {
-      GameOn = 0;
-      gb.sound.tone(100, 500);
-    }
-    if (gb.collide.rectRect(Xbird, Ybird, Tbird, Tbird, XRect5, YTuyup, 10, 20))
     {
       GameOn = 0;
       gb.sound.tone(100, 500);
@@ -158,21 +123,9 @@ void loop()
     gb.display.fillRect(XRect2, YTuyup, 10, 20);
     gb.display.fillRect(XRect2, YTuydown, 10, 15);
 
-    /*Couple rectangle 3*/
-    gb.display.fillRect(XRect3, YTuyup, 10, 20);
-    gb.display.fillRect(XRect3, YTuydown, 10, 15);
-
-    /*Couple rectangle 4*/
-    gb.display.fillRect(XRect4, YTuyup, 10, 20);
-    gb.display.fillRect(XRect4, YTuydown, 10, 15);
-
-    /*Couple rectangle 5*/
-    gb.display.fillRect(XRect5, YTuyup, 10, 20);
-    gb.display.fillRect(XRect5, YTuydown, 10, 15);
-
     /*Compteur*/
     gb.display.setColor(WHITE);
-    gb.display.print(count);
+    gb.display.print(countPoints);
   }
 
   // Fonction GameOver
@@ -183,13 +136,10 @@ void loop()
     if (gb.buttons.pressed(BUTTON_A))
     {
       GameOn = 1;
-      count = 0;
+      countPoints = 0;
       Ybird = 32;
-      XRect1 = 50;
-      XRect2 = 95;
-      XRect3 = 140;
-      XRect4 = 185;
-      XRect5 = 230;
+      XRect1 = DistRectX;
+      XRect2 = DistRectX * 2;
     }
   }
 }
